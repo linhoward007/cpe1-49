@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+#define pi acos(-1)
+using namespace std;
+int main()
+{
+    double s,a;
+    string mode;
+    while(cin>>s>>a>>mode)
+    {
+        if(mode=="min")//min divided by 60 is degree
+            a/=60.0;
+        if(a>180)
+            a=360-a;
+        double arc=2*pi*(6440+s)*a/360;
+        double chord=2*(6440+s)*sin(a*pi/180/2);
+        cout<<fixed<<setprecision(6)<<arc<<" ";
+        cout<<fixed<<setprecision(6)<<chord<<endl;
+    }
+    
+    return 0;
+}
