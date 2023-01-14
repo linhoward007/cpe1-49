@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int n;
+    while(cin>>n)
+    {
+        int temp[n],ct=1;
+        bool determine=true;
+        for(int i=0;i<n;i++)
+        {
+            cin>>temp[i];
+        }
+        vector <int> a;
+        a.clear();
+        for(int i=1;i<n;i++)
+        {
+            a.push_back(abs(temp[i-1]-temp[i]));
+        }
+        sort(a.begin(),a.end());
+        for(int i=0;i<a.size();i++)
+        {
+            if(ct!=a[i])
+                determine=false;
+            ct++;
+        }
+        if(determine==false)
+            cout<<"Not jolly"<<endl;
+        else
+            cout<<"Jolly"<<endl;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return 0;
+}
