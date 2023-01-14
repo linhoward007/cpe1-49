@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int dec;
+        cin>>dec;
+        vector<int> storefib;
+        storefib.clear();
+        storefib.push_back(1);
+        storefib.push_back(2);
+        while(storefib[storefib.size()-1]<dec)
+        {
+            storefib.push_back(storefib[storefib.size()-1]+storefib[storefib.size()-2]);
+        }
+        int temp=dec;
+        cout<<dec<<" = ";
+        for(int i=storefib.size()-2;i>=0;i--)
+        {
+            if(temp>=storefib[i])
+            {
+                cout<<1;
+                temp-=storefib[i];
+            }
+            else
+                cout<<0;
+        }
+        cout<<" (fib)"<<endl;
+    }
+    
+    return 0;
+}
