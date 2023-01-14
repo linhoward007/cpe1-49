@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<string,int> data;
+    int n;
+    while(cin>>n)
+    {
+        data.clear();
+        string country,name;
+        while(n--)
+        {
+            cin>>country;
+            data[country]++;
+            cin.get();
+            getline(cin,name);
+        }
+        for(auto& s:data)
+        {
+            cout<<s.first<<" "<<s.second<<endl;
+        }
+    }
+    return 0;
+}
