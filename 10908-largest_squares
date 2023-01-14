@@ -1,0 +1,63 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int n,r,c;
+    cin>>n;
+    while(n--)
+    {
+        int n,m,q;
+        cin>>n>>m>>q;
+        char a[n][m];
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<m;j++)
+            {
+                cin>>a[i][j];
+            }
+        }
+        cout<<n<<" "<<m<<" "<<q<<endl;
+        for(int z=0;z<q;z++)
+        {
+            int ct=1;
+            bool d=true;
+            cin>>r>>c;
+            int t1=r-1,t2=c-1;
+            while(1)
+            {
+                for(int i=t1;i<t1+ct+2;i++)
+                {
+                    for(int j=t2;j<t2+ct+2;j++)
+                    {
+                        if(a[r][c]!=a[i][j] || !( i>=0 && i<n && j>=0 && j<m))
+                        {
+                            d=false;
+                            break;
+                        }
+                    }
+                    if(d==false)
+                        break;
+                }
+                if(d==false)
+                    break;
+                ct+=2;
+                t1--;
+                t2--;
+            }
+            cout<<ct<<endl;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    return 0;
+}
