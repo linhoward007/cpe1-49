@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int day,party;
+        cin>>day>>party;
+        int a[day];
+        for(int i=0;i<day;i++)
+            a[i]=0;
+        for(int i=0;i<party;i++)
+        {
+            int t,s;
+            cin>>t;
+            s=t;
+            while(s<=day)
+            {
+                
+                if(s%7!=6 && s%7!=0)
+                {
+                    a[s-1]=1;
+                }
+                s+=t;
+            }
+        }
+        int ct=0;
+        for(int i=0;i<day;i++)
+        {
+            if(a[i]==1)
+                ct++;
+        }
+        cout<<ct<<endl;
+    }
+    
+    
+    
+    
+    return 0;
+}
