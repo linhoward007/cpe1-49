@@ -2,27 +2,32 @@
 using namespace std;
 int main()
 {
-    string tex;
-    int ct=0;
-    while(getline(cin,tex))
+    int n;
+    cin>>n;
+    while(n--)
     {
-        for(int i=0;i<tex.length();i++)
+        int nt,ct=0;
+        cin>>nt;
+        int train[nt];
+        for(int i=0;i<nt;i++)
         {
-            if(tex[i]=='\"')
-            {
-                if(ct%2==0)
-                    cout<<'`'<<'`';
-                else
-                    cout<<'\''<<'\'';
-                ct++;
-            }
-            else
-                cout<<tex[i];
-            
+            cin>>train[i];
         }
-        cout<<endl;
+        for(int i=nt-1;i>0;i--)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                if(train[j-1]>train[j])
+                {
+                    int temp;
+                    temp=train[j];
+                    train[j]=train[j-1];
+                    train[j-1]=temp;
+                    ct++;
+                }
+            }
+        }
+        cout<<"Optimal train swapping takes "<<ct<<" swaps."<<endl;
     }
-    
-    
     return 0;
 }
