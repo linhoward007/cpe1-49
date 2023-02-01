@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using  namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    while (n--)
+    {
+        int number;
+        cin>>number;
+        int temp=number,ct1=0;
+        while(temp!=0)
+        {
+            if(temp%2==1)
+                ct1++;
+            temp/=2;
+        }
+        temp=number;
+        
+        int hex=0,ct=0;
+        while(temp!=0)
+        {
+            hex+=(temp%10)*pow(16,ct);
+            temp/=10;
+            ct++;
+        }
+        int ct2=0;
+        while (hex!=0)
+        {
+            if(hex%2==1)
+                ct2++;
+            hex/=2;
+        }
+        cout<<ct1<<" "<<ct2<<endl;
+        
+    }
+    return 0;
+}
