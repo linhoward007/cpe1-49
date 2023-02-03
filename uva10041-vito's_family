@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int n1;
+        cin>>n1;
+        vector<int> a;
+        a.clear();
+        int b;
+        while(n1--)
+        {
+            cin>>b;
+            a.push_back(b);
+        }
+        sort(a.begin(),a.end());
+        int sum=0;
+        for(int i=0;i<a.size();i++)
+        {
+            sum+=abs(a[(a.size()/2)]-a[i]);
+        }
+        cout<<sum<<endl;
+    }
+    
+    return 0;
+}
