@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    
+    string alp;
+    while(getline(cin,alp))
+    {
+        int ct=0;
+        int store[150]={0};
+        for(int i=0;i<alp.length();i++)
+        {
+            store[alp[i]]+=1;
+            ct++;
+        }
+        
+        for(int i=1;i<ct;i++)
+        {
+            for(int j='z';j>=' ';j--)
+            {
+                if(store[j]==i)
+                {
+                    cout<<j<<" "<<i<<endl;
+                }
+            }
+            
+        }
+    }
+    return 0;
+}
