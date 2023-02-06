@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long fp=0,d=0;
+    while(cin>>fp>>d)
+    {
+        long long int ct=fp;
+        for(long long int i=1;i<=d;i++)
+        {
+            i+=ct-1;
+            ct++;
+        }
+        cout<<ct-1<<endl;
+    }
+    
+    return 0;
+}
