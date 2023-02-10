@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    long long int a;
+    while(cin>>a)
+    {
+        if(a==0)
+            break;
+        while(a>9)
+        {
+            int n=0;
+            while(a!=0)
+            {
+                n+=a%10;
+                a/=10;
+            }
+            a=n;
+        }
+        cout<<a<<endl;
+    }
+    
+    return 0;
+}
