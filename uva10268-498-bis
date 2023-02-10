@@ -1,0 +1,37 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int cof;
+    string x;
+    while(cin>>cof)
+    {
+        cin.get();
+        getline(cin,x);
+        vector<int> st;
+        stringstream ss;
+        ss.clear();
+        ss<<x;
+        int tt;
+        while(ss>>tt)
+        {
+            st.push_back(tt);
+        }
+        int t=0;
+        int ct=st.size()-1;
+        for(int i=0;i<st.size()-1;i++)
+        {
+            t+=st[i]*ct*pow(cof,ct-1);
+            ct--;
+        }
+        cout<<t<<endl;
+        
+        
+    }
+    
+    
+    
+    
+    
+    return 0;
+}
