@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int c[13]={0,31,28,31,30,31,30,31,31,30,31,30};
+    string b[7]={"Monday","Tuesday","Wednesday","Thursday",
+        "Friday","Saturday","Sunday"};
+    int n;
+    cin>>n;
+    while(n--)
+    {
+        int m,d;
+        cin>>m>>d;
+        int ctd=0;
+        for(int i=0;i<m;i++)
+        {
+            ctd+=c[i];
+        }
+        ctd+=d;
+        cout<<b[(ctd+4)%7]<<endl;
+    }
+    return 0;
+}
