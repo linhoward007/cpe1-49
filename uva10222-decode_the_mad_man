@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string a="234567890-=edcrfvtgbyhnujmik,ol.p;/[']\\";
+    string b="`1234567890qazwsxedcrfvtgbyhnujmik,olp[";
+    string x;
+    
+    while(getline(cin,x))
+    {
+        for(int i=0;i<x.size();i++)
+        {
+            if(x[i]==' ')
+            {
+                cout<<" ";
+                continue;
+            }
+            for(int j=0;j<a.size();j++)
+            {
+                if(x[i]==a[j])
+                   cout<<b[j];
+            }
+        }
+        cout<<endl;
+        
+        
+    }
+    return 0;
+}
