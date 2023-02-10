@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int c,ct=0;
+    while(cin>>c)
+    {
+        int a[c];
+        for(int i=0;i<c;i++)
+        {
+            cin>>a[i];
+        }
+        map<int,int> b;
+        int d=0;
+        for(int i=0;i<c;i++)
+        {
+            for(int j=i;j<c;j++)
+            {
+                b[a[i]+a[j]]+=1;
+                if(b[a[i]+a[j]]>1)
+                {
+                    d=1;
+                    break;
+                }
+            }
+            if(d==1)
+                break;
+        }
+        if(d==1)
+            cout<<"Case #"<<++ct<<": It is not a B2-Sequence."<<endl;
+        else
+            cout<<"Case #"<<++ct<<": It is a B2-Sequence."<<endl;
+        
+        
+        
+    }
+    
+    return 0;
+}
