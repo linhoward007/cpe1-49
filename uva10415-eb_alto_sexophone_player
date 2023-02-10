@@ -1,0 +1,69 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    map<char,string> a={
+        {'c',"0111001111"},
+        {'d',"0111001110"},
+        {'e',"0111001100"},
+        {'f',"0111001000"},
+        {'g',"0111000000"},
+        {'a',"0110000000"},
+        {'b',"0100000000"},
+        {'C',"0010000000"},
+        {'D',"1111001110"},
+        {'E',"1111001100"},
+        {'F',"1111001000"},
+        {'G',"1111000000"},
+        {'A',"1110000000"},
+        {'B',"1100000000"},
+        {'0',"0000000000"}
+    };
+    
+    int c;
+    cin>>c;
+    cin.get();
+    while(c--)
+    {
+        string p;
+        getline(cin,p);
+        for(int i=0;i<p.length();i++)
+        {
+            if(p[i]==' ')
+                p[i]='0';
+        }
+        if(p.length()==1)
+        {
+            for(int i=0;i<10;i++)
+            {
+                cout<<a[p[0]][i]<<" ";
+            }
+            cout<<endl;
+        }
+        else
+        {
+        
+            for(int i=0;i<10;i++)
+            {
+                int sum=0;
+                for(int j=0;j<p.length();j++)
+                {
+                    if(a[p[j]][i]=='1' && a[p[j+1]][i]=='0')
+                    {
+                        sum++;
+                    }
+                }
+                if(a[p[p.length()-2]][i]=='1' && a[p[p.length()-1]][i]=='1')
+                    sum++;
+                if(a[p[p.length()-2]][i]=='0' && a[p[p.length()-1]][i]=='1')
+                    sum++;
+                cout<<sum<<" ";
+            }
+            cout<<endl;
+        }
+    }
+    
+
+    return 0;
+}
