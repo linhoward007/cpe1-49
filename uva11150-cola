@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int a;
+    while(cin>>a)
+    {
+        int tol;
+        vector<int> d;
+        for(int i=a;i<=a+2;i++)
+        {
+            tol=a;
+            int t=0,tm=0;
+            tm=i;
+            while(tm>2)
+            {
+                tol+=(tm/3);
+                t=(tm%3)+(tm/3);
+                tm=t;
+            }
+            if((i-a)<=t)
+                d.push_back(tol);
+        }
+        sort(d.begin(),d.end());
+        cout<<d[d.size()-1]<<endl;
+        
+        
+        
+    }
+    return 0;
+}
