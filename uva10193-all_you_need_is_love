@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,count=0;
+    cin>>n;
+    while(n--)
+    {
+        string s1,s2;
+        cin>>s1>>s2;
+        int a=0,b=0,ct=0;
+        for(int i=s1.length()-1;i>=0;i--)
+        {
+            a+=(s1[i]-'0')*pow(2,ct);
+            ct++;
+        }
+        ct=0;
+        for(int i=s2.length()-1;i>=0;i--)
+        {
+            b+=(s2[i]-'0')*pow(2,ct);
+            ct++;
+        }
+        while(b!=0)
+        {
+            int t=a%b;
+            a=b;
+            b=t;
+        }
+        cout<<"Pair #"<<++count<<":";
+        if(a!=1)
+            cout<<" All you need is love!"<<endl;
+        else
+            cout<<" Love is not all you need!"<<endl;
+        
+    }
+    
+    return 0;
+}
