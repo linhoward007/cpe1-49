@@ -1,0 +1,29 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cin>>a;
+    while(a--)
+    {
+        int s,d;
+        cin>>s>>d;
+        int c=0,z;
+        for(int i=s;i>=0;i--)
+        {
+            z=i-c;
+            if(z==d)
+            {
+                cout<<i<<" "<<c<<endl;
+                break;
+            }
+            else if(z<0)
+            {
+                cout<<"impossible"<<endl;
+                break;
+            }
+            c++;
+        }
+    }
+    return  0;
+}
