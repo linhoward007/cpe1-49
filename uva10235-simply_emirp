@@ -1,0 +1,48 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool v(int c)
+{
+    int d=0;
+    for(int i=2;i<c/2;i++)
+    {
+       if(c%i==0)
+       {
+           return false;
+       }
+    }
+    return true;
+}
+
+int main()
+{
+    int a;
+    while(cin>>a)
+    {
+        if(v(a)==true)
+        {
+            int t=a,d=0,ct=0;
+            while(t!=0)
+            {
+                d=(t%10)+d*10;
+                t/=10;
+                ct++;
+            }
+            if(d==a)
+                cout<<a<<" is prime."<<endl;
+            else
+            {
+                if(v(d)==true)
+                    cout<<a<<" is emirp."<<endl;
+                else
+                    cout<<a<<" is prime."<<endl;
+            }
+            
+        }
+        else
+            cout<<a<<" is not prime."<<endl;
+    }
+    
+    
+    
+    return 0;
+}
