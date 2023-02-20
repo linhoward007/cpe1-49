@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    double a,b,c,d,a1,b1,c1,d1;
+    while(cin>>a>>a1>>b>>b1>>c>>c1>>d>>d1)
+    {
+        if(a==c && a1==c1)
+            cout<<fixed<<setprecision(3)<<d+(b-a)<<" "<<d1+(b1-a1)<<endl;
+        else if(b==c && b1==c1)
+            cout<<fixed<<setprecision(3)<<d-(b-a)<<" "<<d1-(b1-a1)<<endl;
+        else if(a==d && a1==d1)
+            cout<<fixed<<setprecision(3)<<c+(b-a)<<" "<<c1+(b1-a1)<<endl;
+        else if(b==d && b1==d1)
+            cout<<fixed<<setprecision(3)<<c-(b-a)<<" "<<c1-(b1-a1)<<endl;
+    }
+    
+    return 0;
+}
