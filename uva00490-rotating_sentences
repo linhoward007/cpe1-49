@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    string s[100];
+    int n=0,len=0,maxlen=INT_MIN;
+    
+    while(getline(cin,s[n]))
+    {
+        len=s[n].length();
+        if(len>maxlen)
+            maxlen=len;
+        n++;
+    }
+    
+    for(int i=0;i<maxlen;i++)
+    {
+        for(int j=n-1;j>=0;j--)
+        {
+            if(i>=s[j].length())
+                cout<<' ';
+            else
+                cout<<s[j][i];
+        }
+        cout<<endl;
+    }
+    
+    return 0;
+}
