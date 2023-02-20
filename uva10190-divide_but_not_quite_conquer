@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,m;
+    while(cin>>n>>m)
+    {
+        vector<int> store;
+        bool a=true;
+        if(m==1 || m==0)
+            cout<<"Boring!"<<endl;
+        else
+        {
+            while(n!=1)
+            {
+                if(n%m!=0 || m==0)
+                {
+                    cout<<"Boring!"<<endl;
+                    a=false;
+                    break;
+                }
+                store.push_back(n);
+                n/=m;
+            }
+            if(a==true)
+            {
+                for(const auto& s: store)
+                    cout<<s<<" ";
+                cout<<1<<endl;
+            }
+        }
+    }
+    
+    return 0;
+}
