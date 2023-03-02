@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n,ct=0;
+    cin>>n;
+    while(n--)
+    {
+        char N,equal;
+        int dimension;
+        cin>>N>>equal>>dimension;
+        bool determine = true;
+        long long int array[dimension][dimension];
+        for(int i = 0;i < dimension;i++)
+        {
+            for(int j = 0;j < dimension;j++)
+            {
+                cin>>array[i][j];
+                if(array[i][j] < 0)
+                    determine = false;
+            }
+        }
+        if(determine == true)
+        {
+            for(int i = 0;i < dimension;i++)
+            {
+                for(int j = 0;j < dimension;j++)
+                {
+                    if((array[i][j]-array[dimension-1-i][dimension-1-j]) != 0)
+                        determine = false;
+                }
+            }
+        }
+        if(determine == true)
+            cout<<"Test #"<<++ct<<": Symmetric."<<endl;
+        else
+            cout<<"Test #"<<++ct<<": Non-symmetric."<<endl;
+    }
+    
+    return 0;
+}
