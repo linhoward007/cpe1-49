@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string numbers;
+    while(getline(cin, numbers))
+    {
+        int max=0,sum=0;
+        for(int i = 0 ;i < numbers.length() ;i++)
+        {
+            int temp=0;
+            if(numbers[i] >= '0' && numbers[i] <= '9')
+                temp = numbers[i] - '0';
+            else if(numbers[i] >= 'A' && numbers[i] <= 'Z')
+                temp = numbers[i] - 'A' + 10;
+            else if(numbers[i] >= 'a' && numbers[i] <= 'z')
+                temp = numbers[i] - 'a' + 36;
+            if(temp > max)
+                max = temp;
+            sum += temp;
+        }
+        
+        int i;
+        for(i = max; i < 62; i++)
+        {
+            if(sum % i == 0)
+            {
+                cout<< i + 1 <<endl;
+                break;
+            }
+        }
+        if(i == 62)
+            cout<<"such number is impossible!"<<endl;
+    }
+    
+    
+    
+    
+    
+    
+    return 0;
+}
