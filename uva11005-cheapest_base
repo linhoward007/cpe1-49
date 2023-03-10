@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int numbers,ct=0;
+    cin>>numbers;
+    while(numbers--)
+    {
+        int base[36]={0};
+        for(int i=0;i<36;i++)
+        {
+            cin>>base[i];
+        }
+        
+        if(ct >= 1)
+            cout<<endl;
+        cout<<"Case "<<++ct<<":"<<endl;
+        
+        int n;
+        cin>>n;
+        while(n--)
+        {
+            long long int data;
+            cin>>data;
+            long long int cost[37] = {0}, min = INT_MAX;
+            for(int i=2;i<=36;i++)
+            {
+                long long int sum = 0, temp = data;
+                while(temp != 0)
+                {
+                    sum += base[temp % i];
+                    temp /= i;
+                }
+                if(min > sum)
+                    min = sum;
+                cost[i] = sum;
+            }
+            cout<<"Cheapest base(s) for number "<<data<<":";
+            for(int i=2;i<=36;i++)
+            {
+                if(min == cost[i])
+                    cout<<" "<<i;
+            }
+            cout<<endl;
+        }
+        
+    }
+    
+    
+    
+    return 0;
+}
